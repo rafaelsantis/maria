@@ -1,0 +1,13 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  my-job:
+    # Importing a reusable workflow from another repository and branch
+    uses: rafaelsantis/utils/.github/workflows/cd.yml@main
+    # Passing 'node-version' as an input parameter to the reusable workflow
+    with:
+      node-version: '18.x'
